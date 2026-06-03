@@ -1,0 +1,24 @@
+---
+title: "LC VCO mit einem Colpitts Oszillator"
+format: html
+---
+
+# Kunden Anforderungen
+- 5,5 MHz Mittenfrequenz (Zwischenfrequenz Fernseher)
+- Eingang 0 V
+- linear ± 0,5 V ≙ ± 0,5 MHz
+- Bandbreite von 5 bis 6 MHz
+- nicht lineare Verzerrung sehr klein
+- Robuste Platine für anschaulichen Unterricht
+- große Bauteile
+- Spannungsteiler integriert
+- Ein- und Ausgang BNC
+- Ausgangswiderstand 50 Ω
+- Frequenzdrift durch Gleichspannung korrigiert
+- Kennlinienermittlung mit Gleichspannung
+- Kurzschluss sicher
+
+## Quellen für den Colpitts Oszillator
+- [Elektroniktutor FM Modulation](https://www.elektroniktutor.de/signalkunde/fm.html)
+- [Elektroniktutor Colpitts Oszillator](https://www.elektroniktutor.de/signalkunde/colpitts.html)
+
