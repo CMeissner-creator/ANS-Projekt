@@ -256,7 +256,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Colpitts_Oszillator.kicad_pro",
+    "filename": "Colpitts_Oszillator_5.5MHz.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -373,7 +373,7 @@
       "include_excluded_from_bom": true,
       "name": "Default Editing",
       "sort_asc": true,
-      "sort_field": "Referenz"
+      "sort_field": "Reference"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,
@@ -410,7 +410,7 @@
         "version": 0
       },
       "model_mode": 4,
-      "workbook_filename": "Colpitts_Oszillator.wbk"
+      "workbook_filename": "Colpitts_Oszillator_5.5MHz.wbk"
     },
     "page_layout_descr_file": "",
     "plot_directory": "",
@@ -419,18 +419,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "Colpitts_Oszillator.kicad_sch",
-        "name": "Stammblatt",
-        "uuid": "6ca2e91c-c889-4bd0-985b-ae6911179095"
+        "filename": "Colpitts_Oszillator_5.5MHz.kicad_sch",
+        "name": "Colpitts_Oszillator_5.5MHz",
+        "uuid": "4163999e-a424-4ac2-a6fa-aea54ba5200b"
       }
     ],
-    "used_designators": "D1,C4",
+    "used_designators": "L1,D1,C4,C6,R6",
     "variants": []
   },
   "sheets": [
     [
-      "6ca2e91c-c889-4bd0-985b-ae6911179095",
-      "Stammblatt"
+      "4163999e-a424-4ac2-a6fa-aea54ba5200b",
+      "Colpitts_Oszillator_5.5MHz"
     ]
   ],
   "text_variables": {},

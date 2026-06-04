@@ -1030,6 +1030,216 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Simulation_SPICE:VSIN"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.0254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "V"
+				(at 2.54 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "VSIN"
+				(at 2.54 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Voltage source, sinusoidal"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=+ 2=-"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Params" "dc=0 ampl=1 f=1k ac=1"
+				(at 2.54 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Sim.Type" "SIN"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Device" "V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "ki_keywords" "simulation ac vac"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VSIN_0_0"
+				(arc
+					(start -1.27 0)
+					(mid -0.635 0.6323)
+					(end 0 0)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.27 0)
+					(mid 0.635 -0.6323)
+					(end 0 0)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "+"
+					(at 0 1.905 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(symbol "VSIN_0_1"
+				(circle
+					(center 0 0)
+					(radius 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "VSIN_1_1"
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Transistor_BJT:2N3904"
 			(pin_names
 				(offset 0)
@@ -1552,15 +1762,15 @@
 			(embedded_fonts no)
 		)
 	)
-	(text ".model DVAR D (IS=1e-14 N=1 CJO=50pF VJ=1 M=0.5)"
+	(text ".meas tran vmax MAX V(/col) FROM=2m TO=10m\n.meas tran vmin MIN V(/col) FROM=2m TO=10m\n.meas tran amp PP V(/col) FROM=2m TO=10m\n\n.meas tran t1 WHEN V(/col)=15 RISE=100\n.meas tran t2 WHEN V(/col)=15 RISE=110\n.meas tran period PARAM='(t2-t1)/10'\n.meas tran freq PARAM='1/period'"
 		(exclude_from_sim no)
-		(at 121.158 37.592 0)
+		(at 239.522 60.706 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
-		(uuid "c9b9a3e4-54c0-4f7c-acfb-97bae06cf929")
+		(uuid "9ab87b88-5645-459b-bc53-be0f3c1e3185")
 	)
 	(junction
 		(at 165.1 52.07)
@@ -1581,16 +1791,16 @@
 		(uuid "338212af-ddd5-4971-ade8-f746f4611da6")
 	)
 	(junction
+		(at 134.62 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5905a7b2-e0c2-4781-9d33-66c481bed68f")
+	)
+	(junction
 		(at 170.18 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5b40bee0-e75a-409a-8295-b1d7290158c9")
-	)
-	(junction
-		(at 134.62 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6087ffbf-dc62-4c02-84ba-87728dc200bc")
 	)
 	(junction
 		(at 151.13 121.92)
@@ -1605,16 +1815,16 @@
 		(uuid "755f0d32-7614-4181-8cbe-0deb57d34708")
 	)
 	(junction
+		(at 134.62 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "891420aa-4318-42c7-8b2b-c494399af39f")
+	)
+	(junction
 		(at 152.4 121.92)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d293da55-7715-424c-a258-916c00dd800e")
-	)
-	(junction
-		(at 134.62 80.01)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e19788f0-28cf-4095-ba15-ed2ea6ddb904")
 	)
 	(junction
 		(at 152.4 80.01)
@@ -1667,16 +1877,6 @@
 			(type default)
 		)
 		(uuid "1b04fda7-c701-43a9-b6ad-5de37859f7bd")
-	)
-	(wire
-		(pts
-			(xy 134.62 87.63) (xy 134.62 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1f315e84-48c0-4665-955a-735c694f9065")
 	)
 	(wire
 		(pts
@@ -1800,16 +2000,6 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 66.04) (xy 160.02 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7597ef12-7911-4c66-a0d6-c7b55b495dd3")
-	)
-	(wire
-		(pts
 			(xy 170.18 59.69) (xy 170.18 60.96)
 		)
 		(stroke
@@ -1837,6 +2027,16 @@
 			(type default)
 		)
 		(uuid "84e88ced-46bb-4648-a345-113f1ad4ec10")
+	)
+	(wire
+		(pts
+			(xy 63.5 144.78) (xy 63.5 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86ab73b8-3cc8-4854-9765-3d092e48ce92")
 	)
 	(wire
 		(pts
@@ -1870,6 +2070,16 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 60.96) (xy 160.02 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0a433f2-92d1-4010-9bc0-b9234a0b7797")
+	)
+	(wire
+		(pts
 			(xy 134.62 95.25) (xy 134.62 101.6)
 		)
 		(stroke
@@ -1877,6 +2087,16 @@
 			(type default)
 		)
 		(uuid "a118ed5f-5fd1-4015-b6ae-a79fc91300e5")
+	)
+	(wire
+		(pts
+			(xy 134.62 80.01) (xy 134.62 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1368b60-9402-4fe6-95eb-f3900cc41d7e")
 	)
 	(wire
 		(pts
@@ -1890,16 +2110,6 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 80.01) (xy 195.58 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a58a3708-4ba8-4575-b2e3-88a7288f47bc")
-	)
-	(wire
-		(pts
 			(xy 152.4 91.44) (xy 152.4 95.25)
 		)
 		(stroke
@@ -1910,7 +2120,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 52.07) (xy 160.02 58.42)
+			(xy 160.02 52.07) (xy 160.02 53.34)
 		)
 		(stroke
 			(width 0)
@@ -2020,6 +2230,16 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 80.01) (xy 186.69 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0af6826-1c8c-487a-bb85-69e80801c8c7")
+	)
+	(wire
+		(pts
 			(xy 62.23 115.57) (xy 62.23 111.76)
 		)
 		(stroke
@@ -2058,15 +2278,15 @@
 		)
 		(uuid "0b359c2f-f9d5-4f86-b06b-5369f707d598")
 	)
-	(label "FM"
-		(at 195.58 80.01 0)
+	(label "COL"
+		(at 175.26 80.01 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "c12047e4-a567-4f51-b555-523b8aa4b350")
+		(uuid "73f0e849-9b85-4afc-bb27-6cdb25d69b81")
 	)
 	(symbol
 		(lib_id "power:VDD")
@@ -2299,132 +2519,6 @@
 			(project "Colpitts_Oszillator"
 				(path "/6ca2e91c-c889-4bd0-985b-ae6911179095"
 					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Capacitance")
-		(at 134.62 91.44 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2d897618-d7ce-4659-a3fd-cedf51128425")
-		(property "Reference" "D1"
-			(at 137.16 90.1699 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "DVAR"
-			(at 137.16 92.7099 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 134.62 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 134.62 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Variable capacitance diode"
-			(at 134.62 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 134.62 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Library" "C:\\Users\\corve\\OneDrive\\Desktop\\6.Semester\\ANS\\BB112.cir"
-			(at 134.62 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Name" "BB112"
-			(at 134.62 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 134.62 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8c4a4100-d11c-41fd-abec-6013eec1d4b0")
-		)
-		(pin "2"
-			(uuid "d287d0e6-42e6-46a4-ac70-c042e680ad0d")
-		)
-		(instances
-			(project "Colpitts_Oszillator"
-				(path "/6ca2e91c-c889-4bd0-985b-ae6911179095"
-					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -2918,7 +3012,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1nF"
+		(property "Value" "1nf"
 			(at 173.99 57.1499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3000,7 +3094,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10V"
+		(property "Value" "21V"
 			(at 66.04 78.6101 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3094,6 +3188,211 @@
 		)
 	)
 	(symbol
+		(lib_id "Simulation_SPICE:VSIN")
+		(at 63.5 139.7 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7323f4eb-e85b-4aa8-bc28-097b868d4b52")
+		(property "Reference" "V3"
+			(at 67.31 137.0301 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VSIN"
+			(at 67.31 139.5701 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for"
+			(at 63.5 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Voltage source, sinusoidal"
+			(at 63.5 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=+ 2=-"
+			(at 63.5 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Params" "dc=0 ampl=5 f=500 ac=1"
+			(at 67.31 142.1101 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Type" "SIN"
+			(at 63.5 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "V"
+			(at 63.5 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "2"
+			(uuid "441fa004-3424-48d6-a315-0bd381b8b2ac")
+		)
+		(pin "1"
+			(uuid "602a0d64-7207-44e6-99a8-7dbcdedb1475")
+		)
+		(instances
+			(project "Colpitts_Oszillator"
+				(path "/6ca2e91c-c889-4bd0-985b-ae6911179095"
+					(reference "V3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VD")
+		(at 63.5 134.62 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "78c0bf41-1ba3-47f8-9421-c93e3faba793")
+		(property "Reference" "#PWR06"
+			(at 63.5 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "NF"
+			(at 63.5 129.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VD\""
+			(at 63.5 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "be171fdd-3cfe-447d-a727-a1fe0f2748b2")
+		)
+		(instances
+			(project "Colpitts_Oszillator"
+				(path "/6ca2e91c-c889-4bd0-985b-ae6911179095"
+					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VDD")
 		(at 62.23 101.6 0)
 		(unit 1)
@@ -3172,8 +3471,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Simulation_SPICE:0")
+		(at 63.5 147.32 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8576af97-0cf0-4ffe-b4ff-02bc2ca75055")
+		(property "Reference" "#GND04"
+			(at 63.5 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0"
+			(at 63.5 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#subsec_Circuit_elements__device"
+			(at 63.5 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "0V reference potential for simulation"
+			(at 63.5 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "34131a8f-97c9-43df-ad0a-5499e37a9510")
+		)
+		(instances
+			(project "Colpitts_Oszillator"
+				(path "/6ca2e91c-c889-4bd0-985b-ae6911179095"
+					(reference "#GND04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:L")
-		(at 160.02 62.23 0)
+		(at 160.02 57.15 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -3185,7 +3562,7 @@
 		(fields_autoplaced yes)
 		(uuid "871b83be-a7be-4616-b912-5b12628a24e8")
 		(property "Reference" "L1"
-			(at 161.29 60.9599 0)
+			(at 161.29 55.8799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3196,7 +3573,7 @@
 			)
 		)
 		(property "Value" "10mH"
-			(at 161.29 63.4999 0)
+			(at 161.29 58.4199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3207,7 +3584,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 160.02 62.23 0)
+			(at 160.02 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3218,7 +3595,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 160.02 62.23 0)
+			(at 160.02 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3229,7 +3606,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 160.02 62.23 0)
+			(at 160.02 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3331,6 +3708,84 @@
 			(project "Colpitts_Oszillator"
 				(path "/6ca2e91c-c889-4bd0-985b-ae6911179095"
 					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VD")
+		(at 106.68 80.01 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8a74efa3-3480-453b-9c3e-09149762fd06")
+		(property "Reference" "#PWR04"
+			(at 106.68 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VD"
+			(at 106.68 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VD\""
+			(at 106.68 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "010d98e0-1442-44cd-9e1e-2eebf49da5c4")
+		)
+		(instances
+			(project "Colpitts_Oszillator"
+				(path "/6ca2e91c-c889-4bd0-985b-ae6911179095"
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -3531,8 +3986,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:VD")
-		(at 106.68 80.01 0)
+		(lib_id "Device:D_Capacitance")
+		(at 134.62 91.44 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3541,30 +3996,31 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "e1f64342-0974-4c13-a06d-955e498f26bf")
-		(property "Reference" "#PWR04"
-			(at 106.68 83.82 0)
-			(hide yes)
+		(uuid "dad686de-6d3e-41eb-9a99-419b80e1968e")
+		(property "Reference" "D1"
+			(at 137.16 90.1699 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "VD"
-			(at 106.68 74.93 0)
+		(property "Value" "D_Capacitance"
+			(at 137.16 92.7099 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 106.68 80.01 0)
+			(at 134.62 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3575,7 +4031,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 106.68 80.01 0)
+			(at 134.62 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3585,8 +4041,52 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"VD\""
-			(at 106.68 80.01 0)
+		(property "Description" "Variable capacitance diode"
+			(at 134.62 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Library" "C:\\Users\\corve\\OneDrive\\Desktop\\6.Semester\\ANS\\BB112.cir"
+			(at 134.62 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Name" "BB112"
+			(at 134.62 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 134.62 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 134.62 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3597,12 +4097,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "bd17fb39-fc47-4aa3-a508-231950a48f52")
+			(uuid "f251db76-8513-4060-8d27-a7b3e3be1d8d")
+		)
+		(pin "2"
+			(uuid "cfd2c5ac-6924-41ce-930c-11a3545ca6ea")
 		)
 		(instances
 			(project "Colpitts_Oszillator"
 				(path "/6ca2e91c-c889-4bd0-985b-ae6911179095"
-					(reference "#PWR04")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -3681,6 +4184,84 @@
 			(project "Colpitts_Oszillator"
 				(path "/6ca2e91c-c889-4bd0-985b-ae6911179095"
 					(reference "#GND03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VD")
+		(at 106.68 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f258496a-e0c7-42b8-a804-fb138d5c5603")
+		(property "Reference" "#PWR05"
+			(at 106.68 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "NF"
+			(at 106.68 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VD\""
+			(at 106.68 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d485af48-b748-4460-9fc4-6f808d88934a")
+		)
+		(instances
+			(project "Colpitts_Oszillator"
+				(path "/6ca2e91c-c889-4bd0-985b-ae6911179095"
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -3791,7 +4372,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2,2k"
+		(property "Value" "2.2k"
 			(at 184.15 90.1699 0)
 			(show_name no)
 			(do_not_autoplace no)

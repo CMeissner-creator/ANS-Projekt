@@ -1,0 +1,66 @@
+{
+  "custom_cursors": 2,
+  "last_sch_text_sim_command": "",
+  "tabs": [
+    {
+      "analysis": "TRAN",
+      "commands": [
+        ".tran 200n 20m 0",
+        ".kicad adjustpaths",
+        ".save all",
+        ".probe alli",
+        ".probe allp"
+      ],
+      "dottedSecondary": true,
+      "margins": {
+        "bottom": 45,
+        "left": 70,
+        "right": 70,
+        "top": 30
+      },
+      "measurements": [
+        {
+          "expr": "MIN V(NF)",
+          "format": "3~V"
+        },
+        {
+          "expr": "MIN_AT V(NF)",
+          "format": "3~s"
+        },
+        {
+          "expr": "MAX_AT V(NF)",
+          "format": "3~s"
+        }
+      ],
+      "showGrid": true,
+      "traces": [
+        {
+          "color": "rgb(77, 175, 74)",
+          "cursor1": {
+            "position": 0.0034703647739605875,
+            "x_format": "3~s",
+            "y_format": "3~V"
+          },
+          "cursor2": {
+            "position": 0.003478199222280662,
+            "x_format": "3~s",
+            "y_format": "3~V"
+          },
+          "cursorD": {
+            "x_format": "3~s",
+            "y_format": "3~V"
+          },
+          "signal": "V(/COL)",
+          "trace_type": 257
+        },
+        {
+          "color": "rgb(228, 26, 28)",
+          "signal": "V(NF)",
+          "trace_type": 257
+        }
+      ]
+    }
+  ],
+  "user_defined_signals": [],
+  "version": 7
+}
