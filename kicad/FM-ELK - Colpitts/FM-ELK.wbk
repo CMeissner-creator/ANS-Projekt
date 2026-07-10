@@ -1,0 +1,56 @@
+{
+  "custom_cursors": 1,
+  "last_sch_text_sim_command": ".tran 1n 1.2m 0\n\n* Amplitude am Ausgang prüfen\n.meas tran amp_out PP V(out) FROM=200u TO=900u\n\n* Eingangsspannung am oberen Peak prüfen\n.meas tran vin_high MAX V(in) FROM=240u TO=260u\n\n* Frequenz am oberen Peak von Vin messen\n.meas tran dt_high TRIG V(out) VAL=0 RISE=1 TD=240u TARG V(out) VAL=0 RISE=101 TD=240u\n.meas tran f_high PARAM='100/dt_high'\n\n* Eingangsspannung am unteren Peak prüfen\n.meas tran vin_low MIN V(in) FROM=740u TO=760u\n\n* Frequenz am unteren Peak von Vin messen\n.meas tran dt_low TRIG V(out) VAL=0 RISE=1 TD=740u TARG V(out) VAL=0 RISE=101 TD=740u\n.meas tran f_low PARAM='100/dt_low'\n\n* Frequenzhub berechnen\n.meas tran df PARAM='f_high-f_low'",
+  "tabs": [
+    {
+      "analysis": "TRAN",
+      "commands": [
+        ".tran 1n 1.2m 0\n\n* Amplitude am Ausgang prüfen\n.meas tran amp_out PP V(out) FROM=200u TO=900u\n\n* Eingangsspannung am oberen Peak prüfen\n.meas tran vin_high MAX V(in) FROM=240u TO=260u\n\n* Frequenz am oberen Peak von Vin messen\n.meas tran dt_high TRIG V(out) VAL=0 RISE=1 TD=240u TARG V(out) VAL=0 RISE=101 TD=240u\n.meas tran f_high PARAM='100/dt_high'\n\n* Eingangsspannung am unteren Peak prüfen\n.meas tran vin_low MIN V(in) FROM=740u TO=760u\n\n* Frequenz am unteren Peak von Vin messen\n.meas tran dt_low TRIG V(out) VAL=0 RISE=1 TD=740u TARG V(out) VAL=0 RISE=101 TD=740u\n.meas tran f_low PARAM='100/dt_low'\n\n* Frequenzhub berechnen\n.meas tran df PARAM='f_high-f_low'",
+        ".kicad adjustpaths",
+        ".save all",
+        ".probe alli",
+        ".probe allp"
+      ],
+      "dottedSecondary": true,
+      "legend": {
+        "x": 277,
+        "y": 463
+      },
+      "margins": {
+        "bottom": 45,
+        "left": 70,
+        "right": 70,
+        "top": 30
+      },
+      "measurements": [
+        {
+          "expr": "MIN_AT V(IN)",
+          "format": "3~s"
+        },
+        {
+          "expr": "MAX_AT V(IN)",
+          "format": "3~s"
+        },
+        {
+          "expr": "PP V(Out)",
+          "format": "3~V"
+        }
+      ],
+      "showGrid": true,
+      "traces": [
+        {
+          "color": "rgb(77, 175, 74)",
+          "signal": "V(IN)",
+          "trace_type": 257
+        },
+        {
+          "color": "rgb(166, 86, 40)",
+          "signal": "V(Out)",
+          "trace_type": 257
+        }
+      ]
+    }
+  ],
+  "user_defined_signals": [],
+  "version": 7
+}

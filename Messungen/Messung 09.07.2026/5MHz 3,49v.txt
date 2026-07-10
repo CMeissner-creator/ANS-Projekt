@@ -1,0 +1,6 @@
+5MHz: 3,49v
+5,5MHz :4.04v
+6MHz:4,48v
+
+channel 1 9,71v und ch2 0v
+einstellbar über poti
