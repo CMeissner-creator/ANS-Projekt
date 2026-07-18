@@ -22,3 +22,12 @@ format: html
 - [Elektroniktutor FM Modulation](https://www.elektroniktutor.de/signalkunde/fm.html)
 - [Elektroniktutor Colpitts Oszillator](https://www.elektroniktutor.de/signalkunde/colpitts.html)
 
+### Coilpitts Oszillator in Emitterschaltung für 125 kHz
+
+Als erstes haben wir den Colpitts Oszillator für für 125 kHz von der Elektroniktutor
+Seite in KiCad und danach auf einer Platine aufgebaut.
+
+[Schaltplan als PDF](/ANS-Projekt/Messungen/Schemata/Colpitts_Oszillator.pdf)
+
+#### Colpitts Oszillator in Basisschaltung für 5,5 MHz
+
