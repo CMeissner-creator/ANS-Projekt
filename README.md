@@ -33,11 +33,11 @@ Die Website wird automatisch aus dem Ordner `docs/` generiert.
 Als erstes haben wir den Colpitts Oszillator für für 125 kHz von der Elektroniktutor
 Seite in KiCad und danach auf einer Platine aufgebaut.
 
-[Schaltplan als PDF](/assets/Colpitts_Oszillator.pdf)
+[Schaltplan als PDF](/docs/assets/Colpitts_Oszillator.pdf)
 
 Danach haben wir versucht diesen Oszilator auf 5,5 Mhz umzubauen:
 
-[Schaltplan als PDF](/assets/Colpitts_Oszillator_5.5MHz.pdf)
+[Schaltplan als PDF](/docs/assets/Colpitts_Oszillator_5.5MHz.pdf)
 
 In der NGSpice / KiCad Simulation funktioniert der Oszilator so, aber in der Realität nicht.
 Das Problem ist, dass ein Colpitts Oszilator in der Emitterschaltung bei so hohen Frequenzen nicht funktioniert.
@@ -47,6 +47,6 @@ Die Millerkapazität, des Transistor, macht die Emitterschaltung unmöglich im M
 
 So sind wir schließlich bei einem Colpitts Oszillator in Basisschaltung gelandet.
 
-[Schaltplan als PDF](/assets/FM-ELK.pdf)
+[Schaltplan als PDF](/docs/assets/FM-ELK.pdf)
 
 Dieser funktioniert so im Steckbrettaufbau.
